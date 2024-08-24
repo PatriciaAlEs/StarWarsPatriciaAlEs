@@ -1,0 +1,33 @@
+/* VistaPrincipal.css */
+
+.fondoprincipal{
+background-image: url("https://media.istockphoto.com/id/1370110270/es/vector/cielo-estrellado-nocturno-fondo-espacial-oscuro-con-estrellas.jpg?s=612x612&w=0&k=20&c=MmTdL6oocjxHbDBYPilefJ67RkX1vRryvF4xsOp7Sm0=");
+background-size: auto;
+background-position: center;
+
+
+}
+
+.fondoprincipal2{
+
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas pasen a la siguiente fila si no caben */
+    justify-content: center; /* Espacio entre las tarjetas */
+    gap: 7vh; /* Espacio entre las tarjetas */
+    padding: 4vh; /* Espaciado interno del contenedor */
+
+
+}
+
+h1 {
+
+    color:yellow;
+    font-size: 65px;
+
+    font-family: 'Orbitron', sans-serif;
+}
+
+h2 {
+
+    color:whitesmoke
+}
