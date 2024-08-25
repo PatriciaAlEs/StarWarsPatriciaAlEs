@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import "../../styles/vista_principal.css";
-
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-import { PersonajeCard } from "../component/personaje_card";
 
+import { PersonajeCard } from "../component/personaje_card";
+import { PlanetaCard } from "../component/planeta_card";
+import { VehiculoCard } from "../component/vehiculo_card";
 
 
 
@@ -36,17 +37,22 @@ export const VistaPrincipal = () => {
 				))}
 			</div>
 			<h2> Vehiculos </h2>
-			{/* <div className="fondoprincipal2">
-				{store.personajes?.map((personaje, index) => (
-					<PersonajeCard key={index} name={personaje.name} />
+			<div className="fondoprincipal2">
+				{store.vehiculos?.map((vehiculo, index) => (
+					<VehiculoCard 
+					key={index} 
+					name={vehiculo.name} />
 				))}
-			</div> */}
+			</div>
 			<h2> Planetas </h2>
-			{/* <div className="fondoprincipal2">
-				{store.personajes?.map((personaje, index) => (
-					<PersonajeCard key={index} name={personaje.name} />
+			<div className="fondoprincipal2">
+				{store.planetas?.map((planeta, index) => (
+					<PlanetaCard 
+					key={index} 
+					name={planeta.name} />
 				))}
-			</div> */}
+			</div>
+			
 		</div>
 		
 	)

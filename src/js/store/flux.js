@@ -5,6 +5,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			personajes: [],
 			planetas: [],
 			vehiculos: [],
+			unpersonaje: [],
+			unplaneta: [],
+			unvehiculo: [],
+			favoritos: [],
+			imagenpersonaje: [],
 
 		},
 		actions: {
@@ -20,7 +25,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			traerPlanetas: () => {
 				fetch("https://www.swapi.tech/api/planets")
 				.then(resp => resp.json())
-				.then(data => setStore({ planetas: data.results}))
+				.then(data => {
+					setStore({ planetas: data.results})})
 				.catch(error => console.log(error))
 			},
 
