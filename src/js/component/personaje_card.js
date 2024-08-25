@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/personaje_card.css"
+import "../../styles/una_card.css"
 
 
 export const PersonajeCard = ({ name, height }) => {

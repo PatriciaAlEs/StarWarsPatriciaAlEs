@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/vehiculo_card.css"
+import "../../styles/una_card.css"
 
 
 export const VehiculoCard = ({name}) => {
