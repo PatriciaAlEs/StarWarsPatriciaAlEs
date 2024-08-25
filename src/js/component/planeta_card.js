@@ -20,6 +20,7 @@ export const PlanetaCard = ({name}) => {
 						<a href="/planeta" className="btn btn-dark text-warning">Leer más</a>
 						{/* necesito que me lleve a un_planeta */}
 						<a href="#" className="btn btn-warning"><i className="fa-regular fa-star"></i></a>
+                        {/* podria añadir un alert que pusiera añadido a favoritos! */}
 						{/* //necesito que lo agregue al dropdown */}
 					</div>
                 </div>

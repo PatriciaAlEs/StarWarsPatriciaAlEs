@@ -24,7 +24,7 @@ export const VistaPrincipal = () => {
 	return (
 		<div className="fondoprincipal text-center ">
 			
-			<h1><i className="fa-solid fa-jedi"></i> Hola Star Wars!<i className="fa-solid fa-jedi"></i></h1>
+			<h1><i className="fa-solid fa-jedi"></i> Hola Star Wars! <i className="fa-solid fa-jedi"></i></h1>
 
 			<h2> Personajes </h2>
 			<div className="fondoprincipal2">

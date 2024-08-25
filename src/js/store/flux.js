@@ -5,10 +5,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			personajes: [],
 			planetas: [],
 			vehiculos: [],
+
 			unpersonaje: [],
 			unplaneta: [],
 			unvehiculo: [],
+
 			favoritos: [],
+			
 			imagenpersonaje: [],
 
 		},

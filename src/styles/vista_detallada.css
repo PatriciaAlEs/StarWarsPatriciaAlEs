@@ -1,0 +1,23 @@
+ .img-detalle {
+
+     height: 40vh;
+     width: 75vh;
+     border-radius: 15%;
+ }
+
+ .vista-detallada {
+     display: flex;
+     justify-content: space-around;
+     flex-direction: row;
+     margin: auto;
+     padding: 25px;
+     background-color: black;
+     color:antiquewhite
+ }
+
+ .contenedor {
+     padding: 25px;
+
+     background-color: black;
+     
+ }

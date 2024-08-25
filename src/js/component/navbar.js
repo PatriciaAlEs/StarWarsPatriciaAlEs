@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/vista_principal.css";
 
 export const Navbar = () => {
     return (
@@ -16,7 +17,7 @@ export const Navbar = () => {
             <div className="ml-auto">
                 <div className="dropdown">
                     <button 
-                        className="btn btn-secondary dropdown-toggle" 
+                        className="btn btn-secondary dropdown-toggle " 
                         type="button" 
                         id="dropdownMenuButton1" 
                         data-bs-toggle="dropdown" 
