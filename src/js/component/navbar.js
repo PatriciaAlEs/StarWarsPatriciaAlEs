@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
-import "../../styles/vista_principal.css";
+import "../../styles/navbar.css";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+
+    const { store, actions } = useContext(Context);
+
     return (
         <nav className="navbar navbar-light bg-light bg-black">
             <Link to="/">
@@ -26,7 +30,12 @@ export const Navbar = () => {
                         Tus Favoritos
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        {/* Aquí puedes mapear tus favoritos */}
+
+                        {store.favorito.map((item, indiceFav) => 
+                        
+                        <li key={indiceFav}></li>
+                        
+                        )}
                         <li>
                             <Link className="dropdown-item" to="/un-personaje">
                                 Un Personaje

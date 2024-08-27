@@ -5,13 +5,21 @@
 }
 
 .card {
-
 transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .card:hover {
 transform: translateY(-10px);
 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 background-color: #f0f0f0; /* Cambia ligeramente el color de fondo al hacer hover */
-box-shadow: 0 8px 16px rgba(226, 223, 223, 0.717);
+box-shadow: 0 16px 22px rgba(226, 223, 223, 0.717);
+}
+
+.card-img-top{
+    width: 18.8rem;
+    height: 22rem;
+    object-fit: container;
+    display: flex;
+    
 }

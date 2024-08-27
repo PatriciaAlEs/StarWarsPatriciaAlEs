@@ -1,30 +1,41 @@
-import React from "react";
-import "../../styles/una_card.css"
+import React, {useContext} from "react";
+import { Link } from 'react-router-dom';
+import "../../styles/una_card.css";
+import { Context } from "../store/appContext";
 
 
-export const PersonajeCard = ({ name, height }) => {
-	console.log("Name:", name);
-	console.log("Height:", height);
+
+export const PersonajeCard = ({ name, id }) => {
+
+    const { store, actions } = useContext(Context);
+
+    const imagenReserva = "https://user-images.githubusercontent.com/5948318/38711580-ea19e088-3e9c-11e8-9a02-6b46805f311d.png";
+    const imagenURL = id ? `https://starwars-visualguide.com/assets/img/characters/${id}.jpg` : imagenReserva;
 
 
-	return (
-		<div>
-			<div className="card" style={{ width: "18rem" }}>
-				<img src="https://www.ikea.com/es/en/images/products/kopparfall-picture-moonscape__0997459_pe822680_s5.jpg?f=s"
-					className="card-img-top"
-					alt="hombre y luna" />
-				<div className="card-body">
-					<h5 className="card-title">{name}</h5>
-					<p className="card-text">{height}</p>
-					<div className="botonesleeryfav">
-						<a href="/personaje" className="btn btn-dark text-warning">Leer más</a>
-						{/* necesito que me lleve a un_personaje */}
-						<a href="#" className="btn btn-warning"><i className="fa-regular fa-star"></i></a>
+
+    return (
+        <div>
+            <div className="card" style={{ width: "19rem" }}>
+                <img
+                    src={imagenURL}
+                    className="card-img-top"
+                    alt={`foto personaje ${name}`}
+                    onError={(e) => e.target.src = imagenReserva}
+                />
+                <div className="card-body">
+                    <h5 className="card-title">{name}</h5>
+           
+                    <div className="botonesleeryfav">
+                    <Link to={`/personaje/${id}`} className="btn btn-dark text-warning">Leer más</Link>
+                    <button 
+						onClick={() => actions.añadirFavoritos(id)}
+						className="btn btn-warning"><i className="fa-regular fa-star"></i></button>
 						{/* //necesito que lo agregue al dropdown */}
-					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-				</div>
-			</div>
-		</div>
-	)
-}

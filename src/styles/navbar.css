@@ -1,0 +1,10 @@
+.navbar {
+    position: fixed; /* Fija la navbar en la parte superior */
+    top: 0; /* Posiciona la navbar en la parte superior de la página */
+    width: 100%; /* Hace que la navbar ocupe todo el ancho de la página */
+    background-color: #333; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 0; /* Espaciado interno (padding) */
+    text-align: center; /* Centra el texto */
+    z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
+}

@@ -26,9 +26,9 @@ const Layout = () => {
                     <Routes>
                         <Route path="/" element={<VistaPrincipal />} />
                         {/* conectando la ruta de cada boton con cada view de un elemento :')' */}
-                        <Route path="/personaje" element={<UnPersonaje/>}/>
-                        <Route path="/planeta" element={<UnPlaneta/>}/>
-                        <Route path="/vehiculo" element={<UnVehiculo/>}/>
+                        <Route path="/personaje/:id" element={<UnPersonaje/>}/>
+                        <Route path="/planeta/:id" element={<UnPlaneta/>}/>
+                        <Route path="/vehiculo/:id" element={<UnVehiculo/>}/>
                         <Route path="*" element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
