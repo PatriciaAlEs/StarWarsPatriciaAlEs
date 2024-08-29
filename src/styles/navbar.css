@@ -8,3 +8,16 @@
     text-align: center; /* Centra el texto */
     z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
 }
+
+.listadefavoritos {
+
+    display: flex;
+}
+
+.dropdown {
+    
+    margin-right: 3em;
+}
+
+.dropdown-menu {
+}

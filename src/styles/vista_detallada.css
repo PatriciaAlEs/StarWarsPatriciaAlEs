@@ -11,9 +11,10 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Sombra para profundidad */
     overflow: hidden; /* Asegura que el contenido no se desborde */
     margin: auto;
-    max-width: 90vw; /* Ajusta el tamaño máximo al 90% del ancho de la ventana */
-    max-height: 80vh; /* Ajusta el tamaño máximo al 80% de la altura de la ventana */
+    max-width: 60vw; /* Ajusta el tamaño máximo al 90% del ancho de la ventana */
+    max-height: 60vh; /* Ajusta el tamaño máximo al 80% de la altura de la ventana */
     margin-top: 20vh;
+    
 }
 
 .vista-detallada:hover {
@@ -25,10 +26,15 @@
 .img-detalle {
     object-fit: cover;
     border-radius: 15%;
-    width: 100%; /* Ajusta el tamaño de la imagen al tamaño del contenedor */
+    width: 70%; /* Ajusta el tamaño de la imagen al tamaño del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
+  
 }
 
+.divimagen {
+    display: flex;
+    justify-content: flex-end;
+}
 
 /* Estilo del body */
 body {

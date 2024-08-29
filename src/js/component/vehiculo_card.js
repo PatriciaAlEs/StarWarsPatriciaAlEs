@@ -10,6 +10,13 @@ export const VehiculoCard = ({ name, id }) => {
 	const imagenReserva = "https://user-images.githubusercontent.com/5948318/38711580-ea19e088-3e9c-11e8-9a02-6b46805f311d.png";
     const imagenURL = id ? `https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg` : imagenReserva;
 
+
+    const esFavorito = store.favorito.some(f => f.nombre === name && f.tipo === 'vehiculo');
+
+    const handleFavoriteToggle = () => {
+        actions.añadirFavoritos('vehiculo', name);
+    };
+
 	return (
 		<div>
 			<div className="card" style={{ width: "19rem" }}>
@@ -22,9 +29,13 @@ export const VehiculoCard = ({ name, id }) => {
 					<p className="card-text"></p>
 					<div className="botonesleeryfav">
 					<Link to={`/vehiculo/${id}`} className="btn btn-dark text-warning">Leer más</Link>
-						<button 
-						onClick={() => actions.añadirFavoritos(id)}
-						className="btn btn-warning"><i className="fa-regular fa-star"></i></button>
+					<button
+                            onClick={handleFavoriteToggle}
+                            className="btn btn-warning"
+                            aria-label={esFavorito ? `Eliminar ${name} de favoritos` : `Añadir ${name} a favoritos`}
+                        >
+                            <i className={`fa-star ${esFavorito ? 'fa-solid' : 'fa-regular'}`}></i>
+                        </button>
 						{/* //necesito que lo agregue al dropdown */}
 					</div>
 				</div>

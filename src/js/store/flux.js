@@ -74,38 +74,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
-			añadirFavoritos: (nombreFavorito) => {
+			añadirFavoritos: (tipo, nombreFavorito) => {
 				const store = getStore();
-				
-				if (store.favorito.includes(nombreFavorito)) {
+				const favorito = { tipo, nombre: nombreFavorito }; // Incluye el tipo del favorito
+
+				if (store.favorito.some(f => f.nombre === nombreFavorito && f.tipo === tipo)) {
 					setStore({
-						favorito: store.favorito.filter(repetido => repetido != nombreFavorito)
-					})
+						favorito: store.favorito.filter(f => f.nombre !== nombreFavorito || f.tipo !== tipo)
+					});
 				} else {
 					setStore({
-						favorito: [...store.favorito, nombreFavorito]
-					}) 
-					console.log(store.favorito)
+						favorito: [...store.favorito, favorito]
+					});
 				}
+			},
 
+			deleteFavoritos: (tipo, nombreFavorito) => {
+				const store = getStore();
+				setStore({
+					favorito: store.favorito.filter(f => f.nombre !== nombreFavorito || f.tipo !== tipo)
+				});
 			}
-			// añadirFavoritos: (nombreFavorito) => {
-            //     const store = getStore();
-            //     let nuevosFavoritos;
 
-            //     if (store.favorito.includes(nombreFavorito)) {
-            //         nuevosFavoritos = store.favorito.filter(repetido => repetido !== nombreFavorito);
-            //     } else {
-            //         nuevosFavoritos = [...store.favorito, nombreFavorito];
-            //     }
-
-            //     setStore({
-            //         favorito: nuevosFavoritos
-            //     });
-
-            //     // Guardar favoritos en localStorage
-            //     localStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
-            // }
 		}
 	};
 };

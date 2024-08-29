@@ -9,21 +9,23 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #1a1a1a; /* Color de fondo de la card */
     border-radius: 20px; /* Bordes redondeados */
+    border-radius: 10px;
+    border: 3px solid #f1c40f;
+
 }
 
 /* Efecto de hover para la card */
 .card:hover {
     transform: translateY(-10px); /* Desplaza la card hacia arriba */
     box-shadow: 0 16px 22px rgba(226, 223, 223, 0.717); /* Sombra más intensa */
-    background-color: #f0f0f0; /* Color de fondo cambia ligeramente */
-    color: black
+
+  
 }
 
-.card
 
 /* Estilo para la imagen en la card */
 .card-img-top {
-    width: 18.8rem; /* Ancho de la imagen */
+    width: 18.5rem; /* Ancho de la imagen */
     height: 22rem; /* Alto de la imagen */
     object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
     border-radius: 15px; /* Bordes redondeados en la imagen */

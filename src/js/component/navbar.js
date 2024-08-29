@@ -1,18 +1,20 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import { Context } from "../store/appContext";
-import { PersonajeCard } from "./personaje_card";
 
 export const Navbar = () => {
 
     const { store, actions } = useContext(Context);
+   
 
-    useEffect(() => {
-        actions.añadirFavoritos()
+    const deleteFavorito = (nombreFavorito) => {
+        actions.deleteFavoritos(nombreFavorito);
+    };
 
-    },
-        [])
+    const handleDeleteFavorito = (tipo, nombreFavorito) => {
+        actions.deleteFavoritos(tipo, nombreFavorito);
+    };
 
     return (
         <nav className="navbar navbar-light bg-light bg-black">
@@ -33,33 +35,28 @@ export const Navbar = () => {
                         id="dropdownMenuButton1"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
+
                     >
 
-                        Tus Favoritos
+                        Tus Favoritos {store.favorito.length}
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-
-                        {store.favorito?.map((nombreFavorito, idFav) =>
+                        {store.favorito?.map((favorito, index) => (
                             <li 
-                                key={idFav}>
-                                <a className="dropdown-item">{nombreFavorito}</a>
+                            className="listadefavoritos" 
+                            key={index}>
+                                <span className="dropdown-item">
+                                   {favorito.nombre}
+                                </span>
+                                <button
+                                    className="btn btn-sm btn-danger"
+                                    onClick={() => handleDeleteFavorito(favorito.tipo, favorito.nombre)}
+                                    aria-label={`Eliminar ${favorito.nombre} de favoritos`}
+                                >
+                                    <i className="fa-solid fa-trash"></i>
+                                </button>
                             </li>
-                        )}
-                        {/* <li>
-                            <Link className="dropdown-item" to="/un-personaje">
-                                Un Personaje
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="dropdown-item" to="/un-planeta">
-                                Un Planeta
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="dropdown-item" to="/un-vehiculo">
-                                Un Vehículo
-                            </Link>
-                        </li> */}
+                        ))}
                     </ul>
                 </div>
             </div>

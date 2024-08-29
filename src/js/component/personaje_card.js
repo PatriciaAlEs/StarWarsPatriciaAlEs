@@ -12,7 +12,11 @@ export const PersonajeCard = ({ name, id }) => {
     const imagenReserva = "https://user-images.githubusercontent.com/5948318/38711580-ea19e088-3e9c-11e8-9a02-6b46805f311d.png";
     const imagenURL = id ? `https://starwars-visualguide.com/assets/img/characters/${id}.jpg` : imagenReserva;
 
+    const esFavorito = store.favorito.some(f => f.nombre === name && f.tipo === 'personaje');
 
+    const handleFavoriteToggle = () => {
+        actions.añadirFavoritos('personaje', name);
+    };
 
     return (
         <div>
@@ -28,9 +32,13 @@ export const PersonajeCard = ({ name, id }) => {
            
                     <div className="botonesleeryfav">
                     <Link to={`/personaje/${id}`} className="btn btn-dark text-warning">Leer más</Link>
-                    <button 
-						onClick={() => actions.añadirFavoritos(name)}
-						className="btn btn-warning"><i className="fa-regular fa-star"></i></button>
+                    <button
+                            onClick={handleFavoriteToggle}
+                            className="btn btn-warning "
+                            aria-label={esFavorito ? `Eliminar ${name} de favoritos` : `Añadir ${name} a favoritos`}
+                        >
+                            <i className={`fa-star ${esFavorito ? 'fa-solid' : 'fa-regular'}`}></i>
+                        </button>
 						{/* //necesito que lo agregue al dropdown */}
                     </div>
                 </div>

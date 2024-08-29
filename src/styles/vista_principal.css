@@ -12,16 +12,19 @@
 }
 .fondoprincipal2 {
 
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin-left: 5rem;
     display: flex;
-    flex-wrap: wrap;
-    /* Permite que las tarjetas pasen a la siguiente fila si no caben */
     justify-content: center;
     /* Espacio entre las tarjetas */
     gap: 7vh;
     /* Espacio entre las tarjetas */
     padding: 4vh;
     /* Espaciado interno del contenedor */
-
+    justify-content: flex-start;
+    
 
 }
 
