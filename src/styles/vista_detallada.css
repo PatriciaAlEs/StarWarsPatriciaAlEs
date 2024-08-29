@@ -1,38 +1,38 @@
+/* Estilo para la vista detallada */
+.vista-detallada {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 20px;
+    background-color: #1a1a1a; /* Fondo negro vintage */
+    color: #f5f5f5; /* Texto en gris claro para contraste */
+    border: 3px solid #ffd700; /* Borde dorado */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Sombra para profundidad */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    margin: auto;
+    max-width: 90vw; /* Ajusta el tamaño máximo al 90% del ancho de la ventana */
+    max-height: 80vh; /* Ajusta el tamaño máximo al 80% de la altura de la ventana */
+    margin-top: 20vh;
+}
+
+.vista-detallada:hover {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.7); /* Sombra dorada para hover */
+    transform: scale(1.02); /* Efecto de escalado sutil */
+}
+
+/* Estilo para la imagen */
 .img-detalle {
     object-fit: cover;
     border-radius: 15%;
-    width: 90%;
+    width: 100%; /* Ajusta el tamaño de la imagen al tamaño del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
 
-.vista-detallada {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: auto;
-    padding: 25px;
-    background-color: #2c2c2c;
-    /* Fondo oscuro para mayor contraste */
-    color: #f0f0f0;
-    /* Color de texto claro para contraste con el fondo */
-    border-radius: 12px;
-    /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* Sombra para darle profundidad */
-    overflow: hidden;
-    /* Asegura que el contenido no se desborde fuera del contenedor */
-    margin-top: 20vh;
-    height: 60vh;
-    width: 100vh;
-}
-
-.contenedor {
-    padding: 25px;
-    width: cover;
-    background-color: black;
-
-}
-
+/* Estilo del body */
 body {
-    background-color: black;
+        background-image: url("https://media.istockphoto.com/id/1370110270/es/vector/cielo-estrellado-nocturno-fondo-espacial-oscuro-con-estrellas.jpg?s=612x612&w=0&k=20&c=MmTdL6oocjxHbDBYPilefJ67RkX1vRryvF4xsOp7Sm0=");
+        background-size: auto;
+        background-position: center;
 }

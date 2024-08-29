@@ -11,16 +11,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			unvehiculo: [],
 
 			favorito: [],
-
-
+			// favorito: JSON.parse(localStorage.getItem('favoritos')) || [], // Cargar favoritos desde localStorage
+        
 		},
 		actions: {
-	
+
 			traerPersonajes: () => {
 				fetch("https://www.swapi.tech/api/people")
 					.then(resp => resp.json())
 					.then(data => {
-					
+
 						setStore({ personajes: data.results })
 					})
 					.catch(error => console.log(error))
@@ -49,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json(
 					))
 					.then(data =>
-						setStore({ unpersonaje: data.result.properties}))
+						setStore({ unpersonaje: data.result.properties }))
 					.catch(error => console.log(error))
 
 			},
@@ -59,7 +59,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json(
 					))
 					.then(data =>
-						setStore({ unplaneta: data.result.properties}))
+						setStore({ unplaneta: data.result.properties }))
 					.catch(error => console.log(error))
 
 			},
@@ -69,24 +69,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => resp.json(
 					))
 					.then(data =>
-						setStore({ unvehiculo: data.result.properties}))
+						setStore({ unvehiculo: data.result.properties }))
 					.catch(error => console.log(error))
 
 			},
-			
+
 			añadirFavoritos: (nombreFavorito) => {
 				const store = getStore();
-				if (store.favorito.includes(nombreFavorito)){
+				
+				if (store.favorito.includes(nombreFavorito)) {
 					setStore({
-						favorito:store.favorito.filter((repetido)=> repetido != nombreFavorito)})
+						favorito: store.favorito.filter(repetido => repetido != nombreFavorito)
+					})
 				} else {
 					setStore({
-						favorito:[...store.favorito, nombreFavorito]
-				})
+						favorito: [...store.favorito, nombreFavorito]
+					}) 
+					console.log(store.favorito)
 				}
-				console.log(store.favorito)
+
 			}
-			
+			// añadirFavoritos: (nombreFavorito) => {
+            //     const store = getStore();
+            //     let nuevosFavoritos;
+
+            //     if (store.favorito.includes(nombreFavorito)) {
+            //         nuevosFavoritos = store.favorito.filter(repetido => repetido !== nombreFavorito);
+            //     } else {
+            //         nuevosFavoritos = [...store.favorito, nombreFavorito];
+            //     }
+
+            //     setStore({
+            //         favorito: nuevosFavoritos
+            //     });
+
+            //     // Guardar favoritos en localStorage
+            //     localStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
+            // }
 		}
 	};
 };

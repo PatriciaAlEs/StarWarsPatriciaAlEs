@@ -29,7 +29,7 @@ export const PersonajeCard = ({ name, id }) => {
                     <div className="botonesleeryfav">
                     <Link to={`/personaje/${id}`} className="btn btn-dark text-warning">Leer más</Link>
                     <button 
-						onClick={() => actions.añadirFavoritos(id)}
+						onClick={() => actions.añadirFavoritos(name)}
 						className="btn btn-warning"><i className="fa-regular fa-star"></i></button>
 						{/* //necesito que lo agregue al dropdown */}
                     </div>
